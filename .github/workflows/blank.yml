@@ -34,5 +34,5 @@ jobs:
         run: |
          docker pull  registry.k8s.io/kube-apiserver:v1.28.2
          docker login --username=tianfengli registry.cn-hangzhou.aliyuncs.com
-         docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/k8ssssssss/kube-apiserver:v1.28.2
+         docker tag registry.k8s.io/kube-apiserver:v1.28.2 registry.cn-hangzhou.aliyuncs.com/k8ssssssss/kube-apiserver:v1.28.2
          docker push registry.cn-hangzhou.aliyuncs.com/k8ssssssss/kube-apiserver:v1.28.2
