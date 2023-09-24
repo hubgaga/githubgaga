@@ -29,14 +29,20 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-         docker pull  registry.k8s.io/kube-scheduler:v1.28.2
-         docker login --username=tianfengli --password='gaga123456' registry.cn-hangzhou.aliyuncs.com
-         docker tag registry.k8s.io/kube-scheduler:v1.28.2 registry.cn-hangzhou.aliyuncs.com/k8ssssssss/kube-scheduler:v1.28.2
-         docker push registry.cn-hangzhou.aliyuncs.com/k8ssssssss/kube-scheduler:v1.28.2
-         docker pull  registry.k8s.io/kube-proxy:v1.28.2
-         docker login --username=tianfengli --password='gaga123456' registry.cn-hangzhou.aliyuncs.com
-         docker tag registry.k8s.io/kube-proxy:v1.28.2 registry.cn-hangzhou.aliyuncs.com/k8ssssssss/kube-proxy:v1.28.2
-         docker push registry.cn-hangzhou.aliyuncs.com/k8ssssssss/kube-proxy:v1.28.2
-       
+        
+       docker pull registry.k8s.io/pause:3.9 
+       docker login --username=tianfengli --password='gaga123456' registry.cn-hangzhou.aliyuncs.com 
+       docker tag registry.k8s.io/pause:3.9 registry.cn-hangzhou.aliyuncs.com/k8ssssssss/pause:3.9 
+       docker push registry.cn-hangzhou.aliyuncs.com/k8ssssssss/pause:3.9
+
+       docker pull registry.k8s.io/etcd:3.5.9-0 
+       docker login --username=tianfengli --password='gaga123456' registry.cn-hangzhou.aliyuncs.com 
+       docker tag registry.k8s.io/etcd:3.5.9-0 registry.cn-hangzhou.aliyuncs.com/k8ssssssss/etcd:3.5.9-0 
+       docker push registry.cn-hangzhou.aliyuncs.com/k8ssssssss/etcd:3.5.9-0
+
+       docker pull registry.k8s.io/coredns/coredns:v1.10.1 
+       docker login --username=tianfengli --password='gaga123456' registry.cn-hangzhou.aliyuncs.com 
+       docker tag registry.k8s.io/coredns/coredns:v1.10.1 registry.cn-hangzhou.aliyuncs.com/k8ssssssss/coredns:v1.10.1 
+       docker push registry.cn-hangzhou.aliyuncs.com/k8ssssssss/coredns:v1.10.1
          
          
